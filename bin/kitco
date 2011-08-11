@@ -34,10 +34,11 @@ if Kitco.public_methods.include? symbol
 	  puts "High #{body[:high]}\tLow  #{body[:low]}"
   	puts "Bid  #{body[:bid]}\tAsk  #{body[:ask]}"
 	
+    change = "#{body[:change] >= 0 ? '32m+' : '31m'}#{body[:change]} (#{(body[:percentage] * 100.0).round(4)}%)"
 	  if options[:color]
-		  puts "Change: \e[#{body[:change] >= 0 ? '32m+' : '31m-'}#{body[:change]} (#{body[:percentage] * 100}%)\e[0m"
+		  puts "Change: \e[#{change}\e[0m"
   	else
-	  	puts "Change #{body[:change] >= 0 ? '32m+' : '31m-'}#{body[:change]} (#{body[:percentage] * 100}%)"
+	  	puts "Change #{change}"
   	end
     
   rescue Exception => e
