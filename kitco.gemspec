@@ -2,7 +2,7 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.name = 'kitco'
-  s.version = '0.0.1'
+  s.version = '0.0.2'
   s.date = '2011-08-10'
 
   s.description = "An API for accessing data from Kitco Charts. Also includes a command line utility"
