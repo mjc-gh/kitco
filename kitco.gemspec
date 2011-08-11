@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.email = "mikeycgto@gmail.com"
 
   s.files = %w[
-    README.markdown
-    bin/spotify-dbus
-    lib/spotify-dbus.rb
+    README.md
+    lib/kitco.rb
+    bin/kitco
   ]
   
   s.add_dependency 'httparty',    '>= 0.7.8'
