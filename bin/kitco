@@ -38,7 +38,7 @@ if Kitco.public_methods.include? symbol
 	  if options[:color]
 		  puts "Change: \e[#{body[:change] >= 0 ? '32m+' : '31m'}#{change}\e[0m"
   	else
-	  	puts "Change #{change}"
+	  	puts "Change: #{change}"
   	end
     
   rescue Exception => e
