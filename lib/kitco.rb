@@ -6,7 +6,7 @@ class Kitco
   include HTTParty
 
   base_uri "charts.kitco.com/KitcoCharts"
-  parser(lambda { |body, format|
+  parser lambda { |body, format|
     # they don't send an XML content-type if its a bad request
     return Crack::XML.parse(body) if body.include?('xml')
   
@@ -18,7 +18,7 @@ class Kitco
     
     data.collect! { |n| n.to_f }
     results.merge! Hash[ [:bid, :ask, :change, :low, :high].zip(data) ]
-  })
+  }
   
   def self.gold 
     request :gold
@@ -36,9 +36,11 @@ class Kitco
     request :rhodium
   end
   
-  protected
-  
-  def self.request symbol
-    get '/RequestHandler', :query => {:requestName => 'getSymbolSnapshot', :Symbol => symbol.upcase }
+  class << self
+    def request symbol
+      get '/RequestHandler', :query => {:requestName => 'getSymbolSnapshot', :Symbol => symbol.upcase }
+    end
+    
+    protected :request
   end
 end
