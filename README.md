@@ -1,24 +1,24 @@
-Kitco Gem
-=========
+# Kitco Gem
+
 
 This gem retrieves data (via HTTParty) from Kitco Charts about Gold and other precious metals.
 
 Use at your own discretion 
 
-Install
---------
-	gem install kitco
+## Install
+
+    gem install kitco
 
 
-Examples
---------
-	require 'kitco'
+## Examples
 
-	puts Kitco.gold
-	puts Kitco.silver
+    require 'kitco'
 
-Command Line Utility
---------------------
+    puts Kitco.gold
+    puts Kitco.silver
+
+## Command Line Utility
+
 
     kitco gold
 
