@@ -3,7 +3,7 @@ require 'optparse'
 require 'kitco'
 
 options = { :color => true }
-symbols = [:gold, :silver, :palladium, :rhodium]
+symbols = [:gold, :silver, :platinum, :palladium, :rhodium]
 
 optparse = OptionParser.new do |opts|
   opts.banner << "usage: kitco [options] symbol\n"
