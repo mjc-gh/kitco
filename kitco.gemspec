@@ -2,12 +2,12 @@ Gem::Specification.new do |s|
   s.platform = Gem::Platform::RUBY
 
   s.name = 'kitco'
-  s.version = '0.0.5'
-  s.date = '2011-08-26'
+  s.version = '0.0.6'
+  s.date = '2014-01-07'
 
   s.description = "An API for accessing data from Kitco Charts. Also includes a command line utility"
   s.summary = "#{s.description}!"
-  
+
   s.authors = ["mikeycgto"]
   s.email = "mikeycgto@gmail.com"
 
@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
     lib/kitco.rb
     bin/kitco
   ]
-  
+
   s.add_dependency 'httparty',    '>= 0.7.8'
   s.executables = ['kitco']
   s.has_rdoc = false
