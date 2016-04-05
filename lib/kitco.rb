@@ -3,6 +3,8 @@ require 'base64'
 require 'time'
 
 class Kitco
+  SYMBOLS = %w[gold silver palladium platinum rhodium].freeze
+
   include HTTParty
 
   base_uri "charts.kitco.com/KitcoCharts"
@@ -20,20 +22,12 @@ class Kitco
     results.merge! Hash[ [:bid, :ask, :change, :low, :high].zip(data) ]
   }
 
-  def self.gold
-    request :gold
-  end
-
-  def self.silver
-    request :silver
-  end
-
-  def self.palladium
-    request :palladium
-  end
-
-  def self.rhodium
-    request :rhodium
+  SYMBOLS.each do |symbol|
+    class_eval <<-RUBY_EVAL
+      def self.#{symbol}
+        request :#{symbol}
+      end
+    RUBY_EVAL
   end
 
   class << self
