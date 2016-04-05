@@ -8,11 +8,11 @@ strings = Kitco::SYMBOLS
 optparse = OptionParser.new do |opts|
   opts.banner << "usage: kitco [options] symbol\n"
   opts.banner << "where symbol is #{ strings.map(&:upcase).join(' ') } (case-insensitive)\n\nOptions:"
-	
+
   opts.on '-h', '--help', 'Display this message' do |arg|
     options[:help] = arg
-	end
-	
+  end
+
   opts.on '-c', '--no-color', 'No color in output' do |arg|
     options[:color] = arg
   end
@@ -30,19 +30,20 @@ method = input.to_sym
 
 if Kitco.public_methods.include? method
   begin
-  	body = Kitco.send(method).parsed_response
+    body = Kitco.send(method).parsed_response
 
-  	puts "Results for #{input.upcase} (#{body[:time].strftime('%H:%M %m/%d/%y')})"
-	  puts "High #{body[:high]}\tLow  #{body[:low]}"
-  	puts "Bid  #{body[:bid]}\tAsk  #{body[:ask]}"
-	
+    puts "Results for #{input.upcase} (#{body[:time].strftime('%H:%M %m/%d/%y')})"
+    puts "High #{body[:high]}\tLow  #{body[:low]}"
+    puts "Bid  #{body[:bid]}\tAsk  #{body[:ask]}"
+
     change = "#{body[:change]} (#{(body[:percentage] * 100.0).round(4)}%)"
-	  if options[:color]
-		  puts "Change: \e[#{body[:change] >= 0 ? '32m+' : '31m'}#{change}\e[0m"
-  	else
-	  	puts "Change: #{change}"
-  	end
-    
+
+    if options[:color]
+      puts "Change: \e[#{body[:change] >= 0 ? '32m+' : '31m'}#{change}\e[0m"
+    else
+      puts "Change: #{change}"
+    end
+
   rescue Exception => e
     puts "Failure: #{e}"
     puts e.backtrace.join("\n")
