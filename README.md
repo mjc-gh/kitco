@@ -1,4 +1,5 @@
 # Kitco Gem
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=mikeycgto&url=https://github.com/mikeycgto/kitco&title=kitco&language=english&tags=github&category=software)
 
 
 This gem retrieves data (via HTTParty) from Kitco Charts about Gold and other precious metals.
