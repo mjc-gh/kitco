@@ -3,7 +3,7 @@ require 'base64'
 require 'time'
 
 class Kitco
-  SYMBOLS = %w[gold silver palladium platinum rhodium].freeze
+  SYMBOLS = %w[gold silver palladium platinum rhodium oil aluminum copper nickel lead zinc].freeze
 
   include HTTParty
 
