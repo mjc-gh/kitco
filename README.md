@@ -24,12 +24,3 @@ Use at your own discretion
 For more details on run
 
     kitco --help
-
-# Donating
-
-If you wish to donate to this project you can via [gratipay][].
-
-[![Support via Gratipay][gratipay-badge]][gratipay]
-
-[gratipay-badge]: https://cdn.rawgit.com/gratipay/gratipay-badge/2.x.x/dist/gratipay.png
-[gratipay]: https://www.gratipay.com/mikeycgto
