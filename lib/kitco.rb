@@ -7,7 +7,7 @@ class Kitco
 
   include HTTParty
 
-  base_uri "charts.kitco.com/KitcoCharts"
+  base_uri "ifcharts.kitco.com/KitcoCharts"
   parser lambda { |body, format|
     # they don't send an XML content-type if its a bad request
     return Crack::XML.parse(body) if body.include?('xml')
